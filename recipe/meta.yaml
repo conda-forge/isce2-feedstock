@@ -11,7 +11,7 @@ source:
   folder: isce2
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or osx or py2k]
 
 requirements:
@@ -44,6 +44,7 @@ requirements:
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
+    - xorg-libxdmcp
     - openmotif
     - requests
 
