@@ -11,7 +11,7 @@ source:
   folder: isce2
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or osx or py2k]
 
 requirements:
@@ -44,6 +44,7 @@ requirements:
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
+    - xorg-libxdmcp
     - openmotif
     - requests
 
@@ -54,6 +55,7 @@ test:
       - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`  # [unix]
       - ${ISCEHOME}/applications/topsApp.py --help --steps  # [unix]
       - ${ISCEHOME}/applications/stripmapApp.py --help --steps  # [unix]
+      - ${ISCEHOME}/applications/dem.py --help  # [unix]
       - python {{ RECIPE_DIR }}/run_test.py  # [unix]
       - ${ISCEHOME}/bin/mdx  # [unix]
 
