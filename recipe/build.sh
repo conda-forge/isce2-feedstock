@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -x
+SHORT_OS_STR=$(uname -s)
+
 mkdir $SRC_DIR/{build,install,config,bin}
 
 ##Setup a link to cython here
@@ -23,17 +26,31 @@ FORTRANPATH = $PREFIX/include
 CC = $CC
 CXX = $CXX
 FORTRAN = $FC
-MOTIFLIBPATH = $PREFIX/lib
+" >> $SRC_DIR/config/SConfigISCE
+
+if [ "${SHORT_OS_STR}" == "Darwin" ]; then
+    echo "STDCPPLIB = c++" >> $SRC_DIR/config/SConfigISCE
+else
+    echo "MOTIFLIBPATH = $PREFIX/lib
 MOTIFINCPATH = $PREFIX/include
 X11LIBPATH = $PREFIX/lib
 X11INCPATH = $PREFIX/include
 " >> $SRC_DIR/config/SConfigISCE
 
+fi
+
+echo "*****SConfigISCE*****"
+cat $SRC_DIR/config/SConfigISCE
+echo "*****EndOfFile*******"
 
 # build isce
 export SCONS_CONFIG_DIR=$SRC_DIR/config
 cd $SRC_DIR/isce2
-scons install --skipcheck 
+scons install --skipcheck
+
+# mark completion and ensure directory is not empty
+mkdir -p $SRC_DIR/install/isce/helper
+touch $SRC_DIR/install/isce/helper/completed
 
 ##Restore environment
 unset SCONS_CONFIG_DIR
