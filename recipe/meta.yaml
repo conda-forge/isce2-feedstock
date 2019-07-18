@@ -1,5 +1,5 @@
 {% set name = "isce2" %}
-{% set version = "2.3.1" %}
+{% set version = "2.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-  sha256: 0ff07d8d86bab899b0855baabdb949eb7b0d5df8eef70a0a4c530c75ca033ad0
+  sha256: 5477cdd8501be31cfcee4ba6186cfc0b7e3980431d21dd5eb8dc8541725b820e
   folder: isce2
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win or osx or py2k]
 
 requirements:
