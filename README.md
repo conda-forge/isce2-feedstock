@@ -161,6 +161,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@BryanRiel](https://github.com/BryanRiel/)
 * [@piyushrpt](https://github.com/piyushrpt/)
-* [@rtburns-jpl](https://github.com/rtburns-jpl)
-* [@BryanRiel](https://github.com/BryanRiel)
+* [@rtburns-jpl](https://github.com/rtburns-jpl/)
+
