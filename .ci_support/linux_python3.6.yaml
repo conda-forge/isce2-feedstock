@@ -16,12 +16,10 @@ fortran_compiler:
 - gfortran
 fortran_compiler_version:
 - '7'
-hdf5:
-- 1.10.4
 libgdal:
 - '2.4'
 numpy:
-- '1.9'
+- '1.14'
 pin_run_as_build:
   libgdal:
     max_pin: x.x

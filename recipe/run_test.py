@@ -3,9 +3,8 @@ import isce
 def testStripmapReaders():
     from isceobj.Sensor import SENSORS
     for k,v in SENSORS.items():
-        if not k.startswith('ERS_ENVISAT'): #Fixed for next release
-            print('Sensor: {0}'.format(k))
-            obj = v()
+        print('Stripmap Sensor: {0}'.format(k))
+        obj = v()
 
 def testTOPSReaders():
     from isceobj.Sensor.TOPS import SENSORS

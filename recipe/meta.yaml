@@ -1,5 +1,5 @@
 {% set name = "isce2" %}
-{% set version = "2.3.1" %}
+{% set version = "2.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-  sha256: 0ff07d8d86bab899b0855baabdb949eb7b0d5df8eef70a0a4c530c75ca033ad0
+  sha256: bcb34aae61a67b5fd0a6ce726eae0a1bf9e5a0d6a126bd0563b64d14c8a00823
   folder: isce2
 
 build:
-  number: 1
-  skip: True  # [win or osx or py2k]
+  number: 0
+  skip: True  # [win or py2k]
 
 requirements:
   build:
@@ -24,42 +24,42 @@ requirements:
     - numpy
     - cython
     - scons
-    - hdf5
+    - hdf5 <1.10.5
     - libgdal
     - fftw
-    - openmotif-dev
-    - xorg-libxt
-    - xorg-libxft
-    - xorg-libxmu
+    - openmotif-dev  # [linux]
+    - xorg-libxt     # [linux]
+    - xorg-libxft    # [linux]
+    - xorg-libxmu    # [linux]
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
-    - hdf5
+    - hdf5 <1.10.5
     - h5py
     - opencv
     - gdal
     - libgdal
     - fftw
-    - xorg-libxt
-    - xorg-libxft
-    - xorg-libxmu
-    - xorg-libxdmcp
-    - openmotif
+    - xorg-libxt  # [linux]
+    - xorg-libxft  # [linux]
+    - xorg-libxmu  # [linux]
+    - xorg-libxdmcp  # [linux]
+    - openmotif  # [linux]
     - requests
 
 test:
   imports:
       - isce
   commands:
-      - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`  # [unix]
-      - ${ISCEHOME}/applications/topsApp.py --help --steps  # [unix]
-      - ${ISCEHOME}/applications/stripmapApp.py --help --steps  # [unix]
-      - ${ISCEHOME}/applications/dem.py --help  # [unix]
-      - ${ISCEHOME}/applications/isce2gis.py -h  # [unix]
-      - ${ISCEHOME}/applications/imageMath.py -h  # [unix]
-      - python {{ RECIPE_DIR }}/run_test.py  # [unix]
-      - ${ISCEHOME}/bin/mdx  # [unix]
+      - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`
+      - ${ISCEHOME}/applications/topsApp.py --help --steps
+      - ${ISCEHOME}/applications/stripmapApp.py --help --steps
+      - ${ISCEHOME}/applications/dem.py --help
+      - ${ISCEHOME}/applications/isce2gis.py -h
+      - ${ISCEHOME}/applications/imageMath.py -h
+      - python {{ RECIPE_DIR }}/run_test.py
+      - ${ISCEHOME}/bin/mdx  # [linux]
 
 about:
   home: http://github.com/isce-framework/isce2
@@ -81,6 +81,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - piyushrpt
     - BryanRiel
+    - piyushrpt
     - rtburns-jpl
