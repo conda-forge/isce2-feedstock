@@ -18,11 +18,15 @@ fortran_compiler_version:
 - '7'
 hdf5:
 - 1.10.5
+icu:
+- '64.2'
 libgdal:
 - '3.0'
 numpy:
 - '1.14'
 pin_run_as_build:
+  icu:
+    max_pin: x
   libgdal:
     max_pin: x.x
   python:
