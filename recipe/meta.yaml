@@ -35,7 +35,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
-    - hdf5 <1.10.5
+    - hdf5
     - h5py
     - opencv
     - gdal
