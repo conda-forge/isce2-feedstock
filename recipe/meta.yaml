@@ -24,7 +24,7 @@ requirements:
     - numpy
     - cython
     - scons
-    - hdf5 <1.10.5
+    - hdf5
     - libgdal
     - fftw
     - openmotif-dev  # [linux]
