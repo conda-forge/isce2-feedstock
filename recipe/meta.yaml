@@ -11,7 +11,7 @@ source:
   folder: isce2
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or py2k]
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
     - numpy
     - cython
     - scons
-    - hdf5 <1.10.5
+    - hdf5
     - libgdal
     - fftw
     - openmotif-dev  # [linux]
@@ -35,7 +35,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
-    - hdf5 <1.10.5
+    - hdf5
     - h5py
     - opencv
     - gdal
