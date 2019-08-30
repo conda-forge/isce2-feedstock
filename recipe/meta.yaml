@@ -11,7 +11,7 @@ source:
   folder: isce2
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win or py2k]
 
 requirements:
@@ -27,10 +27,10 @@ requirements:
     - hdf5
     - libgdal
     - fftw
-    - openmotif-dev  # [linux]
-    - xorg-libxt     # [linux]
-    - xorg-libxft    # [linux]
-    - xorg-libxmu    # [linux]
+    - openmotif-dev
+    - xorg-libxt
+    - xorg-libxft
+    - xorg-libxmu
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -41,11 +41,11 @@ requirements:
     - gdal
     - libgdal
     - fftw
-    - xorg-libxt  # [linux]
-    - xorg-libxft  # [linux]
-    - xorg-libxmu  # [linux]
-    - xorg-libxdmcp  # [linux]
-    - openmotif  # [linux]
+    - xorg-libxt
+    - xorg-libxft
+    - xorg-libxmu
+    - xorg-libxdmcp
+    - openmotif
     - requests
 
 test:
@@ -59,7 +59,7 @@ test:
       - ${ISCEHOME}/applications/isce2gis.py -h
       - ${ISCEHOME}/applications/imageMath.py -h
       - python {{ RECIPE_DIR }}/run_test.py
-      - ${ISCEHOME}/bin/mdx  # [linux]
+      - ${ISCEHOME}/bin/mdx
 
 about:
   home: http://github.com/isce-framework/isce2

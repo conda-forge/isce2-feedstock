@@ -30,14 +30,12 @@ FORTRAN = $FC
 
 if [ "${SHORT_OS_STR}" == "Darwin" ]; then
     echo "STDCPPLIB = c++" >> $SRC_DIR/config/SConfigISCE
-else
-    echo "MOTIFLIBPATH = $PREFIX/lib
-MOTIFINCPATH = $PREFIX/include
-X11LIBPATH = $PREFIX/lib
-X11INCPATH = $PREFIX/include
-" >> $SRC_DIR/config/SConfigISCE
-
 fi
+echo "MOTIFLIBPATH = ${PREFIX}/lib
+MOTIFINCPATH = ${PREFIX}/include
+X11LIBPATH = ${PREFIX}/lib
+X11INCPATH = ${PREFIX}/include
+" >> $SRC_DIR/config/SConfigISCE
 
 echo "*****SConfigISCE*****"
 cat $SRC_DIR/config/SConfigISCE
