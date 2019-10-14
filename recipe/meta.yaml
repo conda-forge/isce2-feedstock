@@ -11,7 +11,7 @@ source:
   folder: isce2
 
 build:
-  number: 1
+  number: 2
   skip: True  # [win or py2k]
 
 requirements:
@@ -37,7 +37,7 @@ requirements:
     - scipy
     - hdf5
     - h5py
-    - opencv
+    - opencv 3.4
     - gdal
     - libgdal
     - fftw
