@@ -21,8 +21,10 @@ def testCythonOpenCV():
     from contrib.splitSpectrum import SplitRangeSpectrum
 
 def testAutoRIFT():
-    from contrib.geo_autoRIFT.Autorift import Autorift
-    from contrib.geo_autoRIFT.Geogrid import Geogrid
+    from contrib.geo_autoRIFT.autoRIFT import autoRIFT
+    from contrib.geo_autoRIFT.autoRIFT import autoRIFT_ISCE
+    from contrib.geo_autoRIFT.geogrid import Geogrid
+    from contrib.geo_autoRIFT.geogrid import GeogridOptical
 
 def testMultiModeReaders():
     from isceobj.Sensor.MultiMode import SENSORS
