@@ -20,9 +20,21 @@ def testGeometryModules():
 def testCythonOpenCV():
     from contrib.splitSpectrum import SplitRangeSpectrum
 
+def testAutoRIFT():
+    from contrib.geo_autoRIFT.Autorift import Autorift
+    from contrib.geo_autoRIFT.Geogrid import Geogrid
+
+def testMultiModeReaders():
+    from isceobj.Sensor.MultiMode import SENSORS
+    for k,v in SENSORS.items():
+        print('MultiMode Sensor: {0}'.format(k))
+        obj = v()
+
 if __name__ == '__main__':
 
     testStripmapReaders()
     testTOPSReaders()
     testGeometryModules()
     testCythonOpenCV()
+    testMultiModeReaders()
+    testAutoRIFT()
