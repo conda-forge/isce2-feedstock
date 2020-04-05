@@ -1,24 +1,29 @@
 {% set name = "isce2" %}
-{% set version = "2.3.2" %}
+{% set version = "2.3.3" %}
+{% set autoriftver = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-  sha256: bcb34aae61a67b5fd0a6ce726eae0a1bf9e5a0d6a126bd0563b64d14c8a00823
-  folder: isce2
+    - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
+      sha256: f093086846426b855aa279bcee7de59668587faf1bd8324f6546b216578bfea6
+      folder: isce2
+
+    - url: https://github.com/leiyangleon/autoRIFT/archive/v{{ autoriftver }}.tar.gz
+      sha256: f7f66677d04afe0aa0e291b56af239e614869f56c5bf17da2e092b373d684e4b
+      folder: autorift
 
 build:
-  number: 2
-  skip: True  # [win or py2k]
+  number: 0
+  skip: true  # [win or py2k]
 
 requirements:
   build:
-      - {{ compiler('c') }}
-      - {{ compiler('cxx') }}
-      - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - {{ compiler('fortran') }}
   host:
     - python
     - numpy
@@ -27,6 +32,7 @@ requirements:
     - hdf5
     - libgdal
     - fftw
+    - opencv 3.4
     - openmotif-dev  # [linux]
     - xorg-libxt     # [linux]
     - xorg-libxft    # [linux]
@@ -50,23 +56,27 @@ requirements:
 
 test:
   imports:
-      - isce
+    - isce
   commands:
-      - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`
-      - ${ISCEHOME}/applications/topsApp.py --help --steps
-      - ${ISCEHOME}/applications/stripmapApp.py --help --steps
-      - ${ISCEHOME}/applications/dem.py --help
-      - ${ISCEHOME}/applications/isce2gis.py -h
-      - ${ISCEHOME}/applications/imageMath.py -h
-      - python {{ RECIPE_DIR }}/run_test.py
-      - ${ISCEHOME}/bin/mdx  # [linux]
+    - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`
+    - ${ISCEHOME}/applications/topsApp.py --help --steps
+    - ${ISCEHOME}/applications/stripmapApp.py --help --steps
+    - ${ISCEHOME}/applications/dem.py --help
+    - ${ISCEHOME}/applications/isce2gis.py -h
+    - ${ISCEHOME}/applications/imageMath.py -h
+    - ${ISCEHOME}/applications/alos2App.py --help --steps
+    - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
+    - ${ISCEHOME}/applications/testautoRIFT.py -h
+    - ${ISCEHOME}/applications/testautoRIFT_ISCE.py -h
+    - python {{ RECIPE_DIR }}/run_test.py
+    - ${ISCEHOME}/bin/mdx    # [linux]
 
 about:
   home: http://github.com/isce-framework/isce2
   license: Apache-2.0
   license_family: Apache
   license_file: isce2/LICENSE-2.0.txt
-  summary: 'InSAR Scientific Computing Environment'
+  summary: InSAR Scientific Computing Environment
 
   description: |
     InSAR Scientific Computing Environment (ISCE) is a framework designed
