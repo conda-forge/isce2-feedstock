@@ -1,6 +1,6 @@
 {% set name = "isce2" %}
 {% set version = "2.3.3" %}
-{% set autoriftver = "1.0.4" %}
+{% set autoriftver = "1.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -12,11 +12,11 @@ source:
       folder: isce2
 
     - url: https://github.com/leiyangleon/autoRIFT/archive/v{{ autoriftver }}.tar.gz
-      sha256: f7f66677d04afe0aa0e291b56af239e614869f56c5bf17da2e092b373d684e4b
+      sha256: 0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f
       folder: autorift
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py2k]
 
 requirements:
@@ -91,6 +91,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - BryanRiel
+    - bryanvriel
     - piyushrpt
     - rtburns-jpl
