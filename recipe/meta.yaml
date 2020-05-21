@@ -28,15 +28,12 @@ requirements:
     - python
     - numpy
     - cython
-    - scons
+    - cmake
     - hdf5
     - libgdal
     - fftw
     - opencv 3.4
-    - openmotif-dev  # [linux]
-    - xorg-libxt     # [linux]
-    - xorg-libxft    # [linux]
-    - xorg-libxmu    # [linux]
+    - openmotif-dev
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -47,11 +44,7 @@ requirements:
     - gdal
     - libgdal
     - fftw
-    - xorg-libxt  # [linux]
-    - xorg-libxft  # [linux]
-    - xorg-libxmu  # [linux]
-    - xorg-libxdmcp  # [linux]
-    - openmotif  # [linux]
+    - openmotif
     - requests
 
 test:
