@@ -12,11 +12,12 @@ cmake $SRC_DIR/isce2 \
     -DPYTHON_MODULE_DIR=$MODPATH
 make -j4 install
 
-# Create help directory
-# TODO: should the Python module, or even CMake scripts handle this?
-mkdir -p $SP_DIR/isce2/helper
+# Preserve help directory
+# https://github.com/conda/conda/issues/446
+touch $SP_DIR/isce2/helper/.keepdir
 
 # Move stack processors to share
+# TODO set up cmake to do this automatically
 mkdir -p $PREFIX/share/isce2
 mv $SRC_DIR/isce2/contrib/stack/* $PREFIX/share/isce2
 mv $SRC_DIR/isce2/contrib/timeseries/* $PREFIX/share/isce2
