@@ -1,19 +1,15 @@
 {% set name = "isce2" %}
 {% set version = "2.3.3" %}
-{% set autoriftver = "1.0.6" %}
+{% set hash = "9d9bfa0a7273667930ff77750b9818252b611155" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-    - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-      sha256: f093086846426b855aa279bcee7de59668587faf1bd8324f6546b216578bfea6
+    - url: https://github.com/isce-framework/isce2/archive/{{ hash }}.tar.gz
+      sha256: 364682db8d4acabbf7419d0037cefb474067afe3731b028e3c5b1a1802aa1b6e
       folder: isce2
-
-    - url: https://github.com/leiyangleon/autoRIFT/archive/v{{ autoriftver }}.tar.gz
-      sha256: 0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f
-      folder: autorift
 
 build:
   number: 1
@@ -25,26 +21,20 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
-    - python
+    - python=3.8
     - numpy
     - cython
     - cmake
     - hdf5
     - libgdal
     - fftw
-    - opencv 3.4
     - openmotif-dev
   run:
-    - python
+    - python=3.8
     - {{ pin_compatible('numpy') }}
     - scipy
-    - hdf5
     - h5py
-    - opencv 3.4
     - gdal
-    - libgdal
-    - fftw
-    - openmotif
     - requests
 
 test:
@@ -59,10 +49,8 @@ test:
     - ${ISCEHOME}/applications/imageMath.py -h
     - ${ISCEHOME}/applications/alos2App.py --help --steps
     - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
-    - ${ISCEHOME}/applications/testautoRIFT.py -h
-    - ${ISCEHOME}/applications/testautoRIFT_ISCE.py -h
-    - python {{ RECIPE_DIR }}/run_test.py
-    - ${ISCEHOME}/bin/mdx    # [linux]
+    - $PYTHON {{ RECIPE_DIR }}/run_test.py
+    - ${ISCEHOME}/bin/mdx
 
 about:
   home: http://github.com/isce-framework/isce2
