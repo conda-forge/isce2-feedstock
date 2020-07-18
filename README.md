@@ -5,7 +5,7 @@ Home: http://github.com/isce-framework/isce2
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: InSAR Scientific Computing Environment
 
@@ -188,7 +188,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@BryanRiel](https://github.com/BryanRiel/)
+* [@bryanvriel](https://github.com/bryanvriel/)
 * [@piyushrpt](https://github.com/piyushrpt/)
 * [@rtburns-jpl](https://github.com/rtburns-jpl/)
 
