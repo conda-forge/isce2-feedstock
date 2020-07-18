@@ -41,16 +41,15 @@ test:
   imports:
     - isce
   commands:
-    - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`
-    - ${ISCEHOME}/applications/topsApp.py --help --steps
-    - ${ISCEHOME}/applications/stripmapApp.py --help --steps
-    - ${ISCEHOME}/applications/dem.py --help
-    - ${ISCEHOME}/applications/isce2gis.py -h
-    - ${ISCEHOME}/applications/imageMath.py -h
-    - ${ISCEHOME}/applications/alos2App.py --help --steps
-    - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
+    - topsApp.py --help --steps
+    - stripmapApp.py --help --steps
+    - dem.py --help
+    - isce2gis.py -h
+    - imageMath.py -h
+    - alos2App.py --help --steps
+    - alos2burstApp.py --help --steps
     - $PYTHON {{ RECIPE_DIR }}/run_test.py
-    - ${ISCEHOME}/bin/mdx
+    - mdx
 
 about:
   home: http://github.com/isce-framework/isce2
