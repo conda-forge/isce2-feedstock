@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
-    - python=3.8
+    - python =3.8
     - numpy
     - cython
     - cmake
@@ -30,7 +30,7 @@ requirements:
     - fftw
     - openmotif-dev
   run:
-    - python=3.8
+    - python =3.8
     - {{ pin_compatible('numpy') }}
     - scipy
     - h5py
