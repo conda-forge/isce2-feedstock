@@ -3,6 +3,11 @@ set -xeuo pipefail
 
 MODPATH=$(python3 -c "import os.path; print(os.path.relpath('$SP_DIR', '$PREFIX'))")
 
+# XXX Kludge for broken Xfuncproto.h provided by macOS tk conda-forge package
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export CFLAGS="$CFLAGS -D_X_DEPRECATED"
+fi
+
 # build isce
 mkdir $SRC_DIR/build
 cd $SRC_DIR/build
