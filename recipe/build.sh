@@ -51,6 +51,10 @@ echo "*****SConfigISCE*****"
 cat $SRC_DIR/config/SConfigISCE
 echo "*****EndOfFile*******"
 
+# bake in autoRIFT
+cp -r $SRC_DIR/autorift/geo_autoRIFT $SRC_DIR/isce2/contrib/
+
+
 # build isce
 export SCONS_CONFIG_DIR=$SRC_DIR/config
 cd $SRC_DIR/isce2
@@ -59,6 +63,9 @@ scons install --skipcheck
 # mark completion and ensure directory is not empty
 mkdir -p $SRC_DIR/install/isce/helper
 touch $SRC_DIR/install/isce/helper/completed
+
+# copy in autoRIFT executables
+cp $SRC_DIR/autorift/test*.py $SRC_DIR/install/isce/applications/
 
 ##Restore environment
 unset SCONS_CONFIG_DIR

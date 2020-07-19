@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '4'
+- '9'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -11,7 +11,9 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '4'
+- '9'
+fftw:
+- '3'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -27,10 +29,12 @@ macos_min_version:
 numpy:
 - '1.14'
 pin_run_as_build:
+  fftw:
+    max_pin: x
   libgdal:
     max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.7'
+- 3.8.* *_cpython
