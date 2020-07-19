@@ -3,7 +3,7 @@ set -x
 # XXX Kludge for broken Xfuncproto.h provided by macOS tk conda-forge package
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Force reinstall these to (un)clobber any broken headers
-    conda install -c conda-forge \
+    conda install -p ${PREFIX} -c conda-forge \
         xorg-xproto \
         xorg-libxt \
         xorg-libx11 \
