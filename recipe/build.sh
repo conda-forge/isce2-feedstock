@@ -1,14 +1,14 @@
 #!/bin/sh
-set -xeuo pipefail
-
-MODPATH=$(python3 -c "import os.path; print(os.path.relpath('$SP_DIR', '$PREFIX'))")
-
 # XXX Kludge for broken Xfuncproto.h provided by macOS tk conda-forge package
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Workaround https://github.com/conda-forge/tk-feedstock/issues/15
     conda remove -p ${PREFIX} --force --yes tk
     conda install -p ${PREFIX} --force --yes xorg-libxt xorg-libxext xorg-libx11
 fi
+
+set -xeuo pipefail
+
+MODPATH=$(python3 -c "import os.path; print(os.path.relpath('$SP_DIR', '$PREFIX'))")
 
 # build isce
 mkdir $SRC_DIR/build
