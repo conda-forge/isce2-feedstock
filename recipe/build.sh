@@ -3,6 +3,16 @@
 set -x
 SHORT_OS_STR=$(uname -s)
 
+# XXX Kludge for broken Xfuncproto.h provided by macOS tk conda-forge package
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Force reinstall these to (un)clobber any broken headers
+    conda install -p ${PREFIX} -c conda-forge \
+        xorg-xproto \
+        xorg-libxt \
+        xorg-libx11 \
+        --yes --clobber --force-reinstall
+fi
+
 mkdir $SRC_DIR/{build,install,config,bin}
 
 ##Setup a link to cython here
@@ -30,14 +40,12 @@ FORTRAN = $FC
 
 if [ "${SHORT_OS_STR}" == "Darwin" ]; then
     echo "STDCPPLIB = c++" >> $SRC_DIR/config/SConfigISCE
-else
-    echo "MOTIFLIBPATH = $PREFIX/lib
-MOTIFINCPATH = $PREFIX/include
-X11LIBPATH = $PREFIX/lib
-X11INCPATH = $PREFIX/include
-" >> $SRC_DIR/config/SConfigISCE
-
 fi
+echo "MOTIFLIBPATH = ${PREFIX}/lib
+MOTIFINCPATH = ${PREFIX}/include
+X11LIBPATH = ${PREFIX}/lib
+X11INCPATH = ${PREFIX}/include
+" >> $SRC_DIR/config/SConfigISCE
 
 echo "*****SConfigISCE*****"
 cat $SRC_DIR/config/SConfigISCE

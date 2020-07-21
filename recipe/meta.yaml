@@ -16,7 +16,7 @@ source:
       folder: autorift
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win or py2k]
 
 requirements:
@@ -33,10 +33,10 @@ requirements:
     - libgdal
     - fftw
     - opencv 3.4
-    - openmotif-dev  # [linux]
-    - xorg-libxt     # [linux]
-    - xorg-libxft    # [linux]
-    - xorg-libxmu    # [linux]
+    - openmotif-dev
+    - xorg-libxt
+    - xorg-libxft
+    - xorg-libxmu
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -47,11 +47,11 @@ requirements:
     - gdal
     - libgdal
     - fftw
-    - xorg-libxt  # [linux]
-    - xorg-libxft  # [linux]
-    - xorg-libxmu  # [linux]
-    - xorg-libxdmcp  # [linux]
-    - openmotif  # [linux]
+    - xorg-libxt
+    - xorg-libxft
+    - xorg-libxmu
+    - xorg-libxdmcp
+    - openmotif
     - requests
 
 test:
@@ -69,7 +69,7 @@ test:
     - ${ISCEHOME}/applications/testautoRIFT.py -h
     - ${ISCEHOME}/applications/testautoRIFT_ISCE.py -h
     - python {{ RECIPE_DIR }}/run_test.py
-    - ${ISCEHOME}/bin/mdx    # [linux]
+    - ${ISCEHOME}/bin/mdx
 
 about:
   home: http://github.com/isce-framework/isce2
