@@ -1,22 +1,17 @@
 {% set name = "isce2" %}
-{% set version = "2.3.3" %}
-{% set autoriftver = "1.0.6" %}
+{% set version = "2.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-    - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-      sha256: f093086846426b855aa279bcee7de59668587faf1bd8324f6546b216578bfea6
-      folder: isce2
-
-    - url: https://github.com/leiyangleon/autoRIFT/archive/v{{ autoriftver }}.tar.gz
-      sha256: 0fb07d147c9ea72417aea82ff289d668b5d2c3182b508a7f60b1117f2981502f
-      folder: autorift
+  - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
+    sha256: c9021f394bda3cb3ec995bbe31691aef3a2e5a83307135c1d46430cc2b14d163
+    folder: isce2
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win or py2k]
 
 requirements:
@@ -66,8 +61,6 @@ test:
     - ${ISCEHOME}/applications/imageMath.py -h
     - ${ISCEHOME}/applications/alos2App.py --help --steps
     - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
-    - ${ISCEHOME}/applications/testautoRIFT.py -h
-    - ${ISCEHOME}/applications/testautoRIFT_ISCE.py -h
     - python {{ RECIPE_DIR }}/run_test.py
     - ${ISCEHOME}/bin/mdx
 
