@@ -9,6 +9,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         xorg-libx11 \
         --yes --clobber --force-reinstall
 fi
+echo "MOTIFLIBPATH = ${PREFIX}/lib
+MOTIFINCPATH = ${PREFIX}/include
+X11LIBPATH = ${PREFIX}/lib
+X11INCPATH = ${PREFIX}/include
+" >> $SRC_DIR/config/SConfigISCE
 
 set -xeuo pipefail
 
