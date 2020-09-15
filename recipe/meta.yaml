@@ -27,7 +27,7 @@ requirements:
     - hdf5
     - libgdal
     - fftw
-    - opencv 3.4
+    - opencv
     - openmotif-dev
     - xorg-libxt
     - xorg-libxft
@@ -35,10 +35,11 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
+    - scikit-image
     - scipy
     - hdf5
     - h5py
-    - opencv 3.4
+    - opencv
     - gdal
     - libgdal
     - fftw
