@@ -33,10 +33,9 @@ def testMultiModeReaders():
         obj = v()
 
 if __name__ == '__main__':
-
     # testStripmapReaders() XXX needs cmake cosar support
     testTOPSReaders()
     testGeometryModules()
     testCythonOpenCV()
     testMultiModeReaders()
-    # testAutoRIFT() XXX needs autoRIFT setup
+    testAutoRIFT()

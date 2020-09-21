@@ -1,5 +1,5 @@
 {% set name = "isce2" %}
-{% set version = "2.4.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-    sha256: c9021f394bda3cb3ec995bbe31691aef3a2e5a83307135c1d46430cc2b14d163
+    sha256: cfc27f45994f2c402308c6a9ecc389859e4c1d9a4ac6f401e5aff75b349f9afd
     folder: isce2
 
 build:
@@ -20,20 +20,22 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
-    - python =3.8
+    - python
     - numpy
     - cython
     - cmake
     - hdf5
     - libgdal
     - fftw
-    - opencv 3.4
+    - opencv
     - openmotif-dev
   run:
-    - python =3.8
+    - python
     - {{ pin_compatible('numpy') }}
+    - scikit-image
     - scipy
     - h5py
+    - opencv
     - gdal
     - requests
 
