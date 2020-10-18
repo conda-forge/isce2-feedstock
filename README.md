@@ -5,9 +5,13 @@ Home: http://github.com/isce-framework/isce2
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/isce2-feedstock/blob/master/LICENSE.txt)
 
 Summary: InSAR Scientific Computing Environment
+
+Development: https://github.com/isce-framework/isce2
+
+Documentation: https://github.com/isce-framework/isce2-docs
 
 InSAR Scientific Computing Environment (ISCE) is a framework designed
 for processing Synthetic Aperture Radar (SAR) And Interferometric SAR
