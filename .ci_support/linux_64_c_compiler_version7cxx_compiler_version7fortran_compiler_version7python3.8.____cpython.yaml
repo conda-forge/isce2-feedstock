@@ -36,3 +36,9 @@ python:
 - 3.8.* *_cpython
 target_platform:
 - linux-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
+  - fortran_compiler_version
+- - python
+  - numpy
