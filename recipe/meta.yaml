@@ -9,6 +9,9 @@ source:
   - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
     sha256: cfc27f45994f2c402308c6a9ecc389859e4c1d9a4ac6f401e5aff75b349f9afd
     folder: isce2
+    patches:
+      # Use LDFLAGS from conda build environment
+      - env-ldflags.patch
 
 build:
   number: 3

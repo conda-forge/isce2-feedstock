@@ -1,0 +1,22 @@
+diff --git a/SConstruct b/SConstruct
+index a979b3c..e2266e1 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -31,6 +31,7 @@
+ 
+ import os
+ import sys
++import SCons.Util
+ 
+ if sys.version_info[0] == 2:
+     print('Building with scons from python2')
+@@ -62,6 +63,9 @@ libPath = os.path.join(buildDir,'libs')
+ #this is the directory where all the built library are put so they can easily be found during linking
+ env['PRJ_LIB_DIR'] = libPath
+ 
++if 'LDFLAGS' in os.environ:
++    env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
++
+ # add the libPath to the LIBPATH environment that is where all the libs are serched
+ env.AppendUnique(LIBPATH = [libPath])
+ # add the modPath to the FORTRANMODDIR environment that is where all the fortran mods are searched
