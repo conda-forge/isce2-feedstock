@@ -19,11 +19,11 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - cmake
+    - cython
   host:
     - python
     - numpy
-    - cython
-    - cmake
     - hdf5
     - libgdal
     - fftw
