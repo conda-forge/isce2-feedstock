@@ -9,6 +9,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         xorg-libx11 \
         --yes --clobber --force-reinstall
 fi
+
+# XXX remove after merging https://github.com/isce-framework/isce2/pull/158
+export CFLAGS="$CFLAGS -fcommon"
+
 set -xeuo pipefail
 
 MODPATH=$(python3 -c "import os.path; print(os.path.relpath('$SP_DIR', '$PREFIX'))")
