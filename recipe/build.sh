@@ -35,6 +35,8 @@ CPPPATH = $PREFIX/include $PREFIX/include/opencv4 $PYTHON_INCDIR $NUMPY_INCDIR
 FORTRANPATH = $PREFIX/include
 CC = $CC
 CXX = $CXX
+# XXX remove -fcommon after https://github.com/isce-framework/isce2/pull/158 is merged
+CCFLAGS = -fcommon
 FORTRAN = $FC
 " >> $SRC_DIR/config/SConfigISCE
 
