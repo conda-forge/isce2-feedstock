@@ -42,7 +42,7 @@ requirements:
     - scipy
     - hdf5
     - h5py
-    - opencv
+    - {{ pin_compatible('opencv') }}
     - gdal
     - libgdal
     - fftw
