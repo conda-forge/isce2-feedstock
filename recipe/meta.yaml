@@ -9,9 +9,6 @@ source:
   - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
     sha256: 779757603f919f463e6d86976bb76beac9373b036c294bbe34515f4f3ecf36f9
     folder: isce2
-    patches:
-      # Use LDFLAGS from conda build environment
-      - env-ldflags.patch
 
 build:
   number: 0
@@ -22,51 +19,40 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - cmake
+    - cython
   host:
+    - cython
     - python
     - numpy
-    - cython
-    - scons
     - hdf5
     - libgdal
     - fftw
     - opencv
     - openmotif-dev
-    - xorg-libxt
-    - xorg-libxft
-    - xorg-libxmu
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - scikit-image
     - scipy
-    - hdf5
     - h5py
     - {{ pin_compatible('opencv') }}
     - gdal
-    - libgdal
-    - fftw
-    - xorg-libxt
-    - xorg-libxft
-    - xorg-libxmu
-    - xorg-libxdmcp
-    - openmotif
     - requests
 
 test:
   imports:
     - isce
   commands:
-    - ISCEHOME=`$PYTHON -c "import isce, os; print(os.path.dirname(isce.__file__))" | tail -n 1`
-    - ${ISCEHOME}/applications/topsApp.py --help --steps
-    - ${ISCEHOME}/applications/stripmapApp.py --help --steps
-    - ${ISCEHOME}/applications/dem.py --help
-    - ${ISCEHOME}/applications/isce2gis.py -h
-    - ${ISCEHOME}/applications/imageMath.py -h
-    - ${ISCEHOME}/applications/alos2App.py --help --steps
-    - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
-    - python {{ RECIPE_DIR }}/run_test.py
-    - ${ISCEHOME}/bin/mdx
+    - topsApp.py --help --steps
+    - stripmapApp.py --help --steps
+    - dem.py --help
+    - isce2gis.py -h
+    - imageMath.py -h
+    - alos2App.py --help --steps
+    - alos2burstApp.py --help --steps
+    - $PYTHON {{ RECIPE_DIR }}/run_test.py
+    - mdx
 
 about:
   home: http://github.com/isce-framework/isce2
