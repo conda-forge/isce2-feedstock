@@ -21,11 +21,11 @@ fortran_compiler_version:
 hdf5:
 - 1.10.6
 libgdal:
-- '3.2'
+- '3.3'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
-- '1.16'
+- '1.17'
 pin_run_as_build:
   fftw:
     max_pin: x
@@ -35,7 +35,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.6.* *_cpython
+- 3.8.* *_cpython
 target_platform:
 - osx-64
 zip_keys:
