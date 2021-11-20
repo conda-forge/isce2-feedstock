@@ -21,7 +21,7 @@ fortran_compiler_version:
 hdf5:
 - 1.12.1
 libgdal:
-- '3.3'
+- '3.4'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
