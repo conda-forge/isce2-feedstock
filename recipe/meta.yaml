@@ -12,9 +12,10 @@ source:
     patches:
       # Use LDFLAGS from conda build environment
       - env-ldflags.patch
+      - py310.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win or py2k]
 
 requirements:
