@@ -1,5 +1,5 @@
 {% set name = "isce2" %}
-{% set version = "2.5.1" %}
+{% set version = "2.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,10 @@ package:
 
 source:
   - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-    sha256: 779757603f919f463e6d86976bb76beac9373b036c294bbe34515f4f3ecf36f9
+    sha256: 04e81de62416753afc8d177e9bdd77258fdba42093bbb88272fd866056805351
     folder: isce2
+    patches:
+      - py310.patch
 
 build:
   number: 0
