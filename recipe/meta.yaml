@@ -55,6 +55,7 @@ requirements:
     - xorg-libxdmcp
     - openmotif
     - requests
+    - zstd  # [osx]
 
 test:
   imports:
