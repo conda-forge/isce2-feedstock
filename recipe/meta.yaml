@@ -69,7 +69,7 @@ test:
     - ${ISCEHOME}/applications/alos2App.py --help --steps
     - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
     - python {{ RECIPE_DIR }}/run_test.py
-    - ${ISCEHOME}/bin/mdx
+    - ${ISCEHOME}/bin/mdx  # [not osx]
 
 about:
   home: http://github.com/isce-framework/isce2
