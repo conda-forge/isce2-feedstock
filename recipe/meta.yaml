@@ -13,6 +13,8 @@ source:
       # Use LDFLAGS from conda build environment
       - env-ldflags.patch
       - py310.patch
+      # Add missing release entry
+      - release-260.patch
 
 build:
   number: 0
