@@ -13,9 +13,11 @@ source:
       # Use LDFLAGS from conda build environment
       - env-ldflags.patch
       - py310.patch
+      # Add missing release entry
+      - release-260.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py2k]
 
 requirements:
@@ -53,6 +55,7 @@ requirements:
     - xorg-libxdmcp
     - openmotif
     - requests
+    - zstd  # [osx]
 
 test:
   imports:
@@ -67,7 +70,7 @@ test:
     - ${ISCEHOME}/applications/alos2App.py --help --steps
     - ${ISCEHOME}/applications/alos2burstApp.py --help --steps
     - python {{ RECIPE_DIR }}/run_test.py
-    - ${ISCEHOME}/bin/mdx
+    - ${ISCEHOME}/bin/mdx  # [not osx]
 
 about:
   home: http://github.com/isce-framework/isce2
