@@ -32,7 +32,7 @@ requirements:
     - libgdal
     - fftw
     - opencv
-    - libacl
+    - libacl         # [linux]
     - openmotif-dev
     - xorg-libxt
     - xorg-libxft
