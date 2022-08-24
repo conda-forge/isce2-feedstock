@@ -15,7 +15,7 @@ source:
       - py310.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win or py2k]
 
 requirements:
@@ -32,6 +32,7 @@ requirements:
     - libgdal
     - fftw
     - opencv
+    - libacl         # [linux]
     - openmotif-dev
     - xorg-libxt
     - xorg-libxft
@@ -41,12 +42,8 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - scikit-image
     - scipy
-    - hdf5
     - h5py
-    - {{ pin_compatible('opencv') }}
     - gdal
-    - libgdal
-    - fftw
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
