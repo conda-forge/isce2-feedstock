@@ -34,6 +34,7 @@ requirements:
     - opencv
     - libacl         # [linux]
     - openmotif-dev
+    - libuuid  # [osx]
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -48,6 +49,7 @@ requirements:
     - openmotif
     - requests
     - zstd  # [osx]
+    - libuuid  # [osx]
 
 test:
   imports:
