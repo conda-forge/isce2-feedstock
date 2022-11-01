@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('fortran') }}
     - cmake
     - cython
+    - make
   host:
     - cython
     - python
