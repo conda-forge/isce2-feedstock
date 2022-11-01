@@ -35,6 +35,7 @@ requirements:
     - libacl         # [linux]
     - openmotif-dev
     - libuuid  # [osx]
+    - libicu  # [osx]
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -50,6 +51,7 @@ requirements:
     - requests
     - zstd  # [osx]
     - libuuid  # [osx]
+    - libicu  # [osx]
 
 test:
   imports:
