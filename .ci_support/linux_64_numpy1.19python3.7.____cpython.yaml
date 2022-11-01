@@ -21,11 +21,11 @@ fortran_compiler:
 fortran_compiler_version:
 - '9'
 hdf5:
-- 1.12.1
+- 1.12.2
 libgdal:
-- '3.4'
+- '3.5'
 numpy:
-- '1.18'
+- '1.19'
 pin_run_as_build:
   fftw:
     max_pin: x
