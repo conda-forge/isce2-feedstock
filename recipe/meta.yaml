@@ -34,7 +34,7 @@ requirements:
     - opencv
     - libacl         # [linux]
     - openmotif-dev
-    - libicu   # [osx]
+    - libiconv  # [osx]
     - libuuid  # [osx]
   run:
     - python
@@ -50,7 +50,7 @@ requirements:
     - openmotif
     - requests
     - zstd  # [osx]
-    - libicu   # [osx]
+    - libiconv  # [osx]
     - libuuid  # [osx]
 
 test:
