@@ -9,6 +9,8 @@ source:
   - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
     sha256: 13fd55ffcadcdd723b61053241d5e49905157b0b0ac6ed8532e4faccaa6d77f1
     folder: isce2
+    patches:
+      - mdx-testing.patch
 
 build:
   number: 0
