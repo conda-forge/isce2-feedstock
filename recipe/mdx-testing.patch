@@ -1,0 +1,24 @@
+diff --git a/contrib/mdx/CMakeLists.txt b/contrib/mdx/CMakeLists.txt
+index a4673e0..f3e7172 100644
+--- a/contrib/mdx/CMakeLists.txt
++++ b/contrib/mdx/CMakeLists.txt
+@@ -1,9 +1,13 @@
+-if(TARGET Motif::Motif
+-   AND TARGET X11::X11
+-   AND TARGET X11::Xau
+-   AND TARGET X11::Xt
+-   )
+-
++if(NOT TARGET Motif::Motif)
++    message(STATUS "Motif not found. mdx will not be built")
++elseif(NOT TARGET X11::X11)
++    message(STATUS "X11 not found. mdx will not be built")
++elseif(NOT TARGET X11::Xau)
++    message(STATUS "Xau not found. mdx will not be built")
++elseif(NOT TARGET X11::Xt)
++    message(STATUS "Xt not found. mdx will not be built")
++else()
++    message(STATUS "mdx will be built!")
+     #Only for this folder - ensure openmp is not used for compiling
+     #Modifying flags here have directory scope
+     if("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "GNU")
