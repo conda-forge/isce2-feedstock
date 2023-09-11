@@ -22,8 +22,10 @@ fortran_compiler_version:
 - '9'
 hdf5:
 - 1.14.2
+icu:
+- '72'
 libgdal:
-- '3.6'
+- '3.7'
 numpy:
 - '1.22'
 pin_run_as_build:
