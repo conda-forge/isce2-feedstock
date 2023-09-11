@@ -22,6 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   host:
     - python
     - numpy
@@ -37,6 +39,7 @@ requirements:
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
+    - xorg-libx11    # [linux]
   run:
     - python
     - {{ pin_compatible('numpy') }}
