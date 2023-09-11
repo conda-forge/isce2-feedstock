@@ -22,6 +22,8 @@ hdf5:
 - 1.14.2
 libgdal:
 - '3.7'
+llvm_openmp:
+- '15'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
