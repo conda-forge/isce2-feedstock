@@ -39,7 +39,7 @@ requirements:
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
-    - xorg-libx11    # [linux]
+    - xorg-libx11
   run:
     - python
     - {{ pin_compatible('numpy') }}
