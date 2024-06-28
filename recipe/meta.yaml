@@ -14,12 +14,13 @@ source:
       - env-ldflags.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py2k]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
@@ -38,7 +39,6 @@ requirements:
     - xorg-libxmu
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scikit-image
     - scipy
     - h5py
