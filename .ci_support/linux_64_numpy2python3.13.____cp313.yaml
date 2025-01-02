@@ -26,6 +26,8 @@ fortran_compiler_version:
 - '9'
 hdf5:
 - 1.14.3
+icu:
+- '73'
 libgdal:
 - '3.10'
 numpy:
