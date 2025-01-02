@@ -37,6 +37,7 @@ requirements:
     - libacl         # [linux]
     - openmotif-dev
     - libiconv  # [osx]
+    - libicu
     - libuuid  # [osx]
   run:
     - python
@@ -53,6 +54,7 @@ requirements:
     - requests
     - zstd  # [osx]
     - libiconv  # [osx]
+    - libicu
     - libuuid  # [osx]
 
 test:
