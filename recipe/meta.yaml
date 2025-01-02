@@ -22,6 +22,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+    - {{ cdt('libxt-devel') }}  # [linux]
     - cmake
     - cython
     - make
