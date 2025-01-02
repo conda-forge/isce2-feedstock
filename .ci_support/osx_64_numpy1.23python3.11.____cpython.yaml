@@ -1,9 +1,11 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.13'
+MACOSX_SDK_VERSION:
+- '10.13'
 c_compiler:
 - clang
 c_compiler_version:
-- '15'
+- '18'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,7 +13,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '15'
+- '18'
 fftw:
 - '3'
 fortran_compiler:
@@ -19,9 +21,11 @@ fortran_compiler:
 fortran_compiler_version:
 - '9'
 hdf5:
-- 1.12.2
+- 1.14.3
 libgdal:
-- '3.6'
+- '3.10'
+libiconv:
+- '1'
 libuuid:
 - '2'
 macos_machine:
