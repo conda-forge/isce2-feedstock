@@ -44,6 +44,7 @@ requirements:
     - scipy
     - h5py
     - gdal
+    - xorg-libx11
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
