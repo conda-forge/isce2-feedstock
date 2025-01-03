@@ -35,7 +35,7 @@ requirements:
     - fftw
     - opencv
     - libacl         # [linux]
-    - openmotif-dev
+    - openmotif-dev >=2.3.8
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
@@ -50,7 +50,7 @@ requirements:
     - xorg-libxft
     - xorg-libxmu
     - xorg-libxdmcp
-    - openmotif
+    - openmotif >=2.3.8
     - requests
     - zstd  # [osx]
 
