@@ -21,25 +21,23 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libxt-devel') }}  # [linux]
     - {{ stdlib('c') }}
     - cmake
     - cython
     - make
   host:
-    - cython
     - python
     - numpy
+    - cython
     - hdf5
     - libgdal
     - fftw
     - opencv
     - libacl         # [linux]
     - openmotif-dev
-    - libiconv  # [osx]
-    - icu
-    - libuuid  # [osx]
+    - xorg-libxt
+    - xorg-libxft
+    - xorg-libxmu
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -54,9 +52,6 @@ requirements:
     - openmotif
     - requests
     - zstd  # [osx]
-    - libiconv  # [osx]
-    - icu
-    - libuuid  # [osx]
 
 test:
   imports:
