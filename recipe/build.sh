@@ -22,7 +22,7 @@ cmake $SRC_DIR/isce2 \
     -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DPython_EXECUTABLE=$PYTHON \
     -DPYTHON_MODULE_DIR=$MODPATH
-make -j4 install
+make VERBOSE=1 -j4 install
 
 # Preserve help directory
 # https://github.com/conda/conda/issues/446
