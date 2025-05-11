@@ -14,14 +14,16 @@ source:
       - env-ldflags.patch
 
 build:
-  number: 0
-  skip: true  # [win or py2k]
+  number: 1
+  skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   host:
     - python
     - numpy
@@ -32,10 +34,12 @@ requirements:
     - fftw
     - opencv
     - libacl         # [linux]
+    - icu            # [linux] 
     - openmotif-dev
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
+    - xorg-libx11
   run:
     - python
     - {{ pin_compatible('numpy') }}
