@@ -14,14 +14,16 @@ source:
       - env-ldflags.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py2k]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
   host:
     - python
     - numpy
@@ -33,6 +35,7 @@ requirements:
     - opencv
     - libacl         # [linux]
     - openmotif-dev
+    - icu
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
@@ -43,6 +46,7 @@ requirements:
     - scipy
     - h5py
     - gdal
+    - icu
     - xorg-libxt
     - xorg-libxft
     - xorg-libxmu
