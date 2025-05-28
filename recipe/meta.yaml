@@ -1,5 +1,5 @@
 {% set name = "isce2" %}
-{% set version = "2.6.3" %}
+{% set version = "2.6.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/isce-framework/isce2/archive/v{{ version }}.tar.gz
-    sha256: 13fd55ffcadcdd723b61053241d5e49905157b0b0ac6ed8532e4faccaa6d77f1
+    sha256: 3b2be8efebb2fce40d9360c90670e02353719c3fdadfcb7cc280beb34fe2ab85
     folder: isce2
     patches:
       # Use LDFLAGS from conda build environment
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
   host:
