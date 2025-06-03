@@ -33,8 +33,7 @@ def testMultiModeReaders():
         obj = v()
 
 if __name__ == '__main__':
-
-    testStripmapReaders()
+    # testStripmapReaders() XXX needs cmake cosar support
     testTOPSReaders()
     testGeometryModules()
     testCythonOpenCV()
