@@ -32,7 +32,8 @@ requirements:
     - libgdal
     - fftw
     - opencv
-    - libacl         # [linux]
+    - libacl  # [linux]
+    - libgl-dev  # [linux]
     - openmotif-dev
     - xorg-libxt
     - xorg-libxft
