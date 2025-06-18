@@ -33,7 +33,7 @@ requirements:
     - fftw
     - opencv
     - libacl  # [linux]
-    - libgl-dev  # [linux]
+    - libgl-devel  # [linux]
     - openmotif-dev
     - xorg-libxt
     - xorg-libxft
