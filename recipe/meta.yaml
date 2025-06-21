@@ -12,6 +12,8 @@ source:
     patches:
       # Use LDFLAGS from conda build environment
       - env-ldflags.patch
+      # Allow argument missmatch for gfortran
+      - argument-missmatch.patch
 
 build:
   number: 0
