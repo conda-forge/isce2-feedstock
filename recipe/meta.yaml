@@ -14,6 +14,8 @@ source:
       - env-ldflags.patch
       # Allow argument missmatch for gfortran
       - argument-missmatch.patch
+      # Workaround for Xcode 14 ld
+      - osx-cflags.patch
 
 build:
   number: 0
