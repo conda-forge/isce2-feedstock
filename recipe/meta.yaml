@@ -14,8 +14,8 @@ source:
       - env-ldflags.patch
       # Allow argument missmatch for gfortran
       - argument-missmatch.patch
-      # Workaround for Xcode 14 ld
-      - osx-cflags.patch
+      # Fix ` ld: in .../libs/libcosar.a(Cosar.hh), archive member 'Cosar.hh' with length 440 is not mach-o or llvm bitcode file`
+      - cosar-sources.patch
 
 build:
   number: 0
