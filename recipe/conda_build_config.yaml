@@ -1,8 +1,2 @@
-fortran_compiler:
-  - gfortran
-fortran_compiler_version:
-  - 9
-c_compiler_version:    # [linux]
-  - 9                  # [linux]
-cxx_compiler_version:  # [linux]
-  - 9                  # [linux]
+libgdal:
+  - '3.10'

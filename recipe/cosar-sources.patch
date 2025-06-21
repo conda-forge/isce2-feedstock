@@ -1,0 +1,13 @@
+diff --git a/components/isceobj/Sensor/src/cosar/SConscript b/components/isceobj/Sensor/src/cosar/SConscript
+index 8c3c738..f2cbfae 100644
+--- a/components/isceobj/Sensor/src/cosar/SConscript
++++ b/components/isceobj/Sensor/src/cosar/SConscript
+@@ -8,7 +8,7 @@ project = envSensorSrc2['PROJECT']
+ install = envSensorSrc2['PRJ_LIB_DIR'] 
+ headerFiles = ['Cosar.hh','Burst.hh','Header.hh','byteswap.h']
+ sourceFiles = ['Cosar.cpp','Burst.cpp','Header.cpp']
+-lib = envSensorSrc2.Library(target = 'cosar', source = sourceFiles + headerFiles)
++lib = envSensorSrc2.Library(target = 'cosar', source = sourceFiles)
+ envSensorSrc2.Install(install,lib)
+ envSensorSrc2.Alias('install',install)
+ 
