@@ -1,4 +1,6 @@
+# need to rebuild for HDF5 v1.14.6 first
 libgdal:
   - '3.10'
+# needs to support numpy 2.0+ upstream first
 numpy:
   - '1.26'
