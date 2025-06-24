@@ -29,7 +29,7 @@ hdf5:
 libgdal:
 - '3.10'
 numpy:
-- '2'
+- '1.26'
 pin_run_as_build:
   python:
     min_pin: x.x

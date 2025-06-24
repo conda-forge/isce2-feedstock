@@ -18,7 +18,7 @@ source:
       - cosar-sources.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or py2k]
 
 requirements:
@@ -29,11 +29,11 @@ requirements:
     - {{ compiler('fortran') }}
   host:
     - python
-    - numpy
+    - numpy <2  # Pinned in conda_build_config.yml
     - cython
     - scons
     - hdf5
-    - libgdal
+    - libgdal <3.11  # Pinned in conda_build_config.yml
     - fftw
     - opencv
     - libacl  # [linux]
