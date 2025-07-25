@@ -18,7 +18,7 @@ source:
       - cosar-sources.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win or py2k]
 
 requirements:
