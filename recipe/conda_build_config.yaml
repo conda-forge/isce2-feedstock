@@ -1,8 +1,6 @@
-fortran_compiler:
-  - gfortran
-fortran_compiler_version:
-  - 13
-c_compiler_version:    # [linux]
-  - 13                 # [linux]
-cxx_compiler_version:  # [linux]
-  - 13                 # [linux]
+# need to rebuild for HDF5 v1.14.6 first
+libgdal:
+  - '3.10'
+# needs to support numpy 2.0+ upstream first
+numpy:
+  - '1.26'

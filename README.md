@@ -224,6 +224,7 @@ Feedstock Maintainers
 =====================
 
 * [@bryanvriel](https://github.com/bryanvriel/)
+* [@jhkennedy](https://github.com/jhkennedy/)
 * [@piyushrpt](https://github.com/piyushrpt/)
 * [@rtburns-jpl](https://github.com/rtburns-jpl/)
 
