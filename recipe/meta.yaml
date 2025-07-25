@@ -44,7 +44,6 @@ requirements:
     - xorg-libxmu
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scikit-image
     - scipy
     - h5py
