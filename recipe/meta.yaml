@@ -19,7 +19,7 @@ source:
 
 build:
   number: 2
-  skip: true  # [win or py2k]
+  skip: true  # [win]
 
 requirements:
   build:
