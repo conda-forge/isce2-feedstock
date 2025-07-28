@@ -18,8 +18,8 @@ source:
       - cosar-sources.patch
 
 build:
-  number: 1
-  skip: true  # [win or py2k]
+  number: 2
+  skip: true  # [win]
 
 requirements:
   build:
@@ -29,11 +29,11 @@ requirements:
     - {{ compiler('fortran') }}
   host:
     - python
-    - numpy <2  # Pinned in conda_build_config.yml
+    - numpy     # Pinned in conda_build_config.yml
     - cython
     - scons
     - hdf5
-    - libgdal <3.11  # Pinned in conda_build_config.yml
+    - libgdal   # Pinned in conda_build_config.yml
     - fftw
     - opencv
     - libacl  # [linux]
@@ -44,7 +44,6 @@ requirements:
     - xorg-libxmu
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scikit-image
     - scipy
     - h5py
