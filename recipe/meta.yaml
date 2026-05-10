@@ -18,7 +18,7 @@ source:
       - cosar-sources.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
