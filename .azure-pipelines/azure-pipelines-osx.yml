@@ -8,8 +8,8 @@ jobs:
     vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_python3.10.____cpython:
-        CONFIG: osx_64_python3.10.____cpython
+      osx_64_hdf51.14.6python3.10.____cpython:
+        CONFIG: osx_64_hdf51.14.6python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -18,8 +18,8 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
-      osx_64_python3.11.____cpython:
-        CONFIG: osx_64_python3.11.____cpython
+      osx_64_hdf51.14.6python3.11.____cpython:
+        CONFIG: osx_64_hdf51.14.6python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -28,8 +28,38 @@ jobs:
         resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
-      osx_64_python3.12.____cpython:
-        CONFIG: osx_64_python3.12.____cpython
+      osx_64_hdf51.14.6python3.12.____cpython:
+        CONFIG: osx_64_hdf51.14.6python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
+      osx_64_hdf52python3.10.____cpython:
+        CONFIG: osx_64_hdf52python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
+      osx_64_hdf52python3.11.____cpython:
+        CONFIG: osx_64_hdf52python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: false
+        tools_install_dir: ~/miniforge3
+      osx_64_hdf52python3.12.____cpython:
+        CONFIG: osx_64_hdf52python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
